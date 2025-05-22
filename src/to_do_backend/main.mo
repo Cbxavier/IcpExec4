@@ -1,5 +1,9 @@
 import Buffer "mo:base/Buffer";
+import Principal "mo:base/Principal";
  actor {
+   public shared(message) func get_principal_client() : async Text {
+        return "Principal: " # Principal.toText(message.caller) # "!";
+    };
   type Tarefa = { id: Nat;          // Identificador único da tarefa
                   categoria: Text;  // Categoria da tarefa   
                   descricao: Text;  // Descrição detalhada da tarefa   
